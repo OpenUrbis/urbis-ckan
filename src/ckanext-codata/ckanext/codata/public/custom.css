@@ -212,8 +212,8 @@ background-color:  #fff;
 
 
 .logo img {
-  max-height: 80px; /* Adjust height */
-  max-width: auto;  /* Maintain aspect ratio */
+  max-height: 84px;
+  width: auto;
 }
 
 
@@ -890,7 +890,7 @@ header.masthead {
 }
 
 header.masthead .navbar {
-  min-height: 74px;
+  min-height: 92px;
   padding: 0;
 }
 
@@ -902,7 +902,7 @@ header.masthead .logo {
 header.masthead .logo img {
   display: block;
   width: auto;
-  max-height: 72px;
+  max-height: 84px;
 }
 
 header.masthead .navbar-nav {
@@ -2256,11 +2256,11 @@ input:focus {
   }
 
   header.masthead .navbar {
-    min-height: 58px;
+    min-height: 70px;
   }
 
   header.masthead .logo img {
-    max-height: 56px;
+    max-height: 64px;
   }
 
   .main #content > .row.wrapper {
