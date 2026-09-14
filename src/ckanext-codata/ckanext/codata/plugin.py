@@ -5,6 +5,8 @@ from sqlalchemy import func
 from datetime import datetime, timedelta
 import logging
 
+from ckanext.codata.views import get_blueprints
+
 log = logging.getLogger(__name__)
 
 
@@ -17,11 +19,13 @@ class CodataPlugin(plugins.SingletonPlugin):
     - `IPackageController`: Para modificar metadados de datasets antes da indexação.
     - `ITemplateHelpers`: Para adicionar funções de ajuda aos templates.
     - `IFacets`: Para customizar as facetas de busca.
+    - `IBlueprint`: Para registrar rotas e handlers de requisição customizados.
     """
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IBlueprint)
 
     # --- IConfigurer ---
     def update_config(self, config_):
@@ -35,6 +39,16 @@ class CodataPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, "templates")
         toolkit.add_public_directory(config_, "public")
         toolkit.add_resource("assets", "codata")
+
+    # --- IBlueprint ---
+    def get_blueprint(self):
+        """
+        Registra os blueprints da extensão.
+        Além de eventuais rotas, é por aqui que entra o handler que força o
+        download direto dos arquivos de recursos (ver `views.py`).
+        :return: Lista de blueprints do Flask.
+        """
+        return get_blueprints()
 
     # --- IPackageController ---
     def before_dataset_index(self, pkg_dict: dict) -> dict:

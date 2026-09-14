@@ -1,38 +1,49 @@
 <footer class="site-footer">
   <div class="container">
+    {% block footer_wordmark %}
+      <a class="footer-wordmark" href="https://urbis.prefeitura.sp.gov.br/">URBIS</a>
+    {% endblock %}
     {% block footer_content %}
-    <div class="row">
-      <div class="col-md-8 footer-links">
+    <div class="footer-grid">
+      <div class="footer-col footer-links">
         {% block footer_nav %}
+          <h2 class="footer-heading">{{ _('Navegação') }}</h2>
           <ul class="list-unstyled">
             {% block footer_links %}
-              <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format("o Portal Orçamento Aberto") }}</a></li>
+              <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format("o DadosAbertos.Urbis") }}</a></li>
             {% endblock %}
-          </ul>
-          <ul class="list-unstyled">
             {% block footer_links_ckan %}
-              {% set api_url = 'https://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-              <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
-              <li>
-                <a href="https://datalake.urbis.sampa.br/">
-                    {{ _('Orquestrador de Dados') }}
-                </a>
-              </li>
-              <li>
-                <a href="https://basedosdados.org/">
-                    {{ _('Desenvolvido por') }}
-                    <img src="/logo_basedosdados.svg" alt="{{ _('Logo Base dos Dados') }}" style="height: 20px; vertical-align: middle; margin-left: 5px;">
-                </a>
-              </li>
+              <li><a href="https://docs.ckan.org/en/">{{ _('CKAN API') }}</a></li>
+              <li><a href="https://datalake.urbis.prefeitura.sp.gov.br/">{{ _('Datalake.Urbis (uso interno)') }}</a></li>
             {% endblock %}
           </ul>
         {% endblock %}
+
+        <div class="footer-credits">
+          {% block footer_attribution %}
+            <ul class="list-unstyled">
+              <li class="footer-credit">
+                <span class="footer-credit-label">{{ _('Desenvolvido por') }}</span>
+                <a href="https://basedosdados.org/">
+                  <img src="/logo_basedosdados.svg" alt="">
+                  <span class="footer-credit-name"></span>
+                </a>
+              </li>
+              <li class="footer-credit">
+                <span class="footer-credit-label">{{ _('Powered by') }}</span>
+                <a href="https://okfn.org/en/">
+                  <img src="/logo_okfn.svg" alt="">
+                  <span class="footer-credit-name"></span>
+                </a>
+              </li>
+            </ul>
+          {% endblock %}
+        </div>
       </div>
-      <div class="col-md-4 attribution">
-        {% block footer_attribution %}
-          <p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
-        {% endblock %}
+
+      <div class="footer-col footer-lang">
         {% block footer_lang %}
+          <h2 class="footer-heading">{{ _('Idioma') }}</h2>
           {% snippet "snippets/language_selector.html" %}
         {% endblock %}
       </div>
