@@ -1,703 +1,3 @@
-/* =====================================================
-   The "account masthead" bar across the top of the site
-   ===================================================== */
-
-.account-masthead {
-background-color:  #fff;
-}
-/* The "bubble" containing the number of new notifications. */
-.account-masthead .account .notifications a span {
-  background-color: black;
-}
-/* The text and icons in the user account info. */
-.account-masthead .account ul li a {
-  color: #273ff0;
-}
-/* The user account info text and icons, when the user's pointer is hovering
-   over them. */
-.account-masthead .account ul li a:hover {
-  color: rgba(255, 255, 255, 0.7);
-  background-color: black;
-}
-
-/* ========================================================================
-   The main masthead bar that contains the site logo, nav links, and search
-   ======================================================================== */
-
-.masthead {
-  background-color: white;
-}
-/* The "navigation pills" in the masthead (the links to Datasets,
-   Organizations, etc) when the user's pointer hovers over them. */
-.masthead .navigation .nav-pills li a:hover {
-  background-color: rgb(48, 48, 48);
-  color: white;
-}
-/* The "active" navigation pill (for example, when you're on the /dataset page
-   the "Datasets" link is active). */
-.masthead .navigation .nav-pills li.active a {
-  background-color: rgb(74, 74, 74);
-}
-/* The "box shadow" effect that appears around the search box when it
-   has the keyboard cursor's focus. */
-.masthead input[type="text"]:focus {
-  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
-}
-
-
-.masthead .main-navbar ul li a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #273ff0;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-
-.masthead .main-navbar ul li a:hover{
-    color: white;
-    background-color: #5f91db; 
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-}
-
-.masthead .main-navbar ul li:hover a, .masthead .main-navbar ul li:focus a, .masthead .main-navbar ul li.active a {
-  border-radius: 0.3rem;
-  background-color: #5f91db;
-  color: white;
-}
-
-/* Estilos para o card de promoção */
-.module-promotion.card.box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para o cover da imagem */
-.card-cover {
-  width: 100%;
-  overflow: hidden;
-}
-
-.card-cover-img.wide {
-  width: 100%;
-  height: 220px; /* Ajuste a altura conforme necessário */
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Estilos para o padding e título */
-.padding-2 {
-  width: 100%;
-  padding: 20px;
-  background-color: white; /* Fundo branco em vez do gradiente escuro */
-}
-
-.padding-2 h1.h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333; /* Cor escura para o texto em fundo claro */
-}
-
-/* Estilos para o spacer */
-.spacer.tiny.fill {
-  height: 10px;
-  width: 100%;
-}
-
-/* Estilos para o corpo do card */
-.card-body.scroll {
-  padding: 20px;
-  max-height: 400px; /* Altura máxima antes de iniciar rolagem */
-  overflow-y: auto;
-}
-
-.about-rich-text.w-richtext {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Ajuste para a seção featured */
-.featured.media-overlay {
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .card-cover-img.wide {
-    height: 200px;
-  }
-  
-  .padding-2 h1.h1 {
-    font-size: 1.8rem;
-  }
-}
-
-
-/* Espaço entre os blocos na coluna direita */
-.spacer-block {
-  width: 100%;
-  clear: both;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-/* Estilização alternativa usando classes do Bootstrap */
-.homepage .col-md-6 > div:not(:first-child) {
-  margin-top: 30px;
-}
-
-/* Ou se preferir usar as classes específicas */
-.homepage #search-block {
-  margin-bottom: 30px;
-}
-
-.homepage #metadata-stats-block {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.homepage #faq-block {
-  margin-top: 30px;
-}
-
-
-
-/* ===========================================
-   The content in the middle of the front page
-   =========================================== */
-
-/* Remove the "box shadow" effect around various boxes on the page. */
-.box {
-  box-shadow: none;
-}
-/* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
-   boxes. */
-.hero .box {
-  border: none;
-}
-/* Change the colors of the "Search Your Data" box. */
-.homepage .module-search .module-content {
-  color: rgb(68, 68, 68);
-  background-color: white;
-}
-/* Change the background color of the "Popular Tags" box. */
-.homepage .module-search .tags {
-  background-color: rgb(61, 61, 61);
-}
-/* Remove some padding. This makes the bottom edges of the "Welcome to CKAN"
-   and "Search Your Data" boxes line up. */
-.module-content:last-child {
-  padding-bottom: 0px;
-}
-.homepage .module-search {
-  padding: 0px;
-}
-/* Add a border line between the top and bottom halves of the front page. */
-.homepage [role="main"] {
-  border-top: 1px solid rgb(204, 204, 204);
-}
-
-.search-form .search-input button i {
-  color: #273ff0;
-  transition: color 0.2s ease-in;
-}
-
-
-.logo img {
-  max-height: 80px; /* Adjust height */
-  max-width: auto;  /* Maintain aspect ratio */
-}
-
-
-.homepage .hero {
-  background: none;
-  background-color: var(--lighter-grey);
-  padding: 20px 0;
-}
-
-/* ====================================
-   The landing page metadata_stats snippet
-   ==================================== */
-
-
-.big-number {
-  color: var(--theme-color);
-  font-size: 3em;
-  font-weight: 900;
-  text-align: center;
-}
-
-.grid {
-  grid-column-gap: var(--📐units--radius-general);
-  grid-row-gap: var(--📐units--radius-general);
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
-  display: grid;
-}
-
-.grid._3c {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.grid._3c.padding {
-  align-self: stretch;
-}
-
-.input-label.btn-label {
-  text-align: center;
-  margin-left: 0;
-}
-
-.btn-label {
-  z-index: 1;
-  border-top-right-radius: 3px;
-  margin-bottom: 0;
-  padding-top: 12px;
-  padding-bottom: 4px;
-  font-size: .9rem;
-  font-weight: 700;
-  line-height: 1;
-  position: relative;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-/* ====================================
-   The landing page faq snippet
-   ==================================== */
-/* Container da FAQ com tamanho fixo e scroll */
-
-
-.scroll {
-  overflow: auto;
-}
-
-.accordion-container {
-  border-radius: 0;
-  padding-bottom: 12px;
-  overflow: hidden;
-}
-
-.accordion-container.first {
-  border-top-left-radius: var(--📐units--radius-general);
-  border-top-right-radius: var(--📐units--radius-general);
-}
-
-.accordion-container.last {
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-.accordion-container.faq {
-  border: 1px solid var(--light-grey);
-}
-
-.accordion-container.faq:hover {
-  border-color: var(--theme-color);
-}
-
-.accordion-container.padding-2 {
-  padding: 12px;
-}
-
-.accordion-container.card-group {
-  border: 2px solid var(--light-grey);
-  border-radius: var(--📐units--radius-big);
-  background-color: #ffffff40;
-  padding-top: 12px;
-  padding-left: 12px;
-}
-
-.accordion-container.card-group:hover {
-  border-color: var(--theme-light);
-  background-color: #fff6;
-}
-
-.accordion-content {
-  padding-left: 24px;
-  padding-right: 24px;
-  overflow: hidden;
-}
-
-.accordion-content.guide {
-  padding: var(--📐units--padding-base) var(--📐units--padding-base) var(--📐units--padding-base) var(--📐units--padding-large);
-}
-
-.accordion-content.tab {
-  padding: var(--📐units--padding-large);
-  background-color: var(--bkg-color);
-  position: absolute;
-  inset: 0% 0% 0% 25rem;
-  overflow: auto;
-}
-
-.accordion-content.tab.top-tabs {
-  top: 170px;
-  left: 0;
-}
-
-.accordion-content.shrink {
-  height: 0;
-  overflow: hidden;
-}
-
-.accordion-content.padding-2 {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.accordion-header {
-  grid-column-gap: var(--📐units--radius-small);
-  grid-row-gap: var(--📐units--radius-small);
-  cursor: pointer;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 32px;
-  grid-auto-columns: 1fr;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 12px;
-  display: grid;
-  overflow: hidden;
-}
-
-.accordion-header.tab {
-  padding-left: var(--📐units--padding-large);
-}
-
-.accordion-header.tab.guide {
-  margin-bottom: var(--📐units--padding-tiny);
-}
-
-.faq-pre-wrapper {
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-}
-
-.faq-pre-wrapper.grid-left {
-  grid-column-gap: var(--📐units--grid-flex-spacer);
-  grid-row-gap: var(--📐units--grid-flex-spacer);
-  grid-template-rows: auto auto;
-  grid-template-columns: .5fr 1fr;
-  grid-auto-columns: 1fr;
-  display: flex;
-}
-
-.accordion-tab-list {
-  max-width: var(--📐units--accordion-tab-left-width);
-}
-
-.accordion-tab-list.top-tabs {
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-  max-width: none;
-  display: flex;
-}
-
-.accordion-tab-item {
-  width: var(--📐units--accordion-tab-left-width);
-  cursor: pointer;
-}
-
-.accordion-tab-item.guide {
-  margin-bottom: var(--📐units--padding-tiny);
-}
-
-.accordion-tab-item.top-tabs {
-  width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-.accordion-tab-wrapper {
-  height: 80dvh;
-  max-height: 720px;
-  position: relative;
-}
-
-.txt-ico {
-  z-index: 1;
-  font-family: var(--🅰️-font-family--icon-font);
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: .7;
-  text-decoration: none;
-  display: flex;
-  position: relative;
-}
-
-.block.card {
-  margin-bottom: 0;
-  padding: 6px;
-}
-
-.block.card.mw-380px {
-  max-width: 380px;
-  overflow: visible;
-}
-
-
-
-
-.block.highlight:hover {
-  border-radius: var(--📐units--radius-small);
-  background-color: var(--pure-white);
-  outline-color: var(--theme-off-white);
-  outline-offset: 4px;
-  outline-width: 1px;
-  outline-style: solid;
-}
-
-.block.highlight:focus {
-  border-radius: var(--📐units--radius-small);
-  background-color: var(--pure-white);
-  outline-color: var(--theme-light);
-  outline-offset: 2px;
-  outline-width: 3px;
-  outline-style: solid;
-}
-
-
-
-.element {
-}
-#w-node-_0cf13a24-c054-049c-6861-447c0d985b74-a5892e5b, #w-node-_72efe9a4-a401-73d9-3daa-fc895321e909-5321e907 {
-  grid-area: span 1 / span 1 / span 1 / span 1;
-}
-.card.padding {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.card:hover {
-  box-shadow: 0 6px 12px #00000026;
-}
-.padding {
-  padding: 6px;
-}
-.card {
-  grid-column-gap: 6px;
-  grid-row-gap: 6px;
-  border-radius: var(--📐units--radius-general);
-  background-color: var(--bkg-color);
-  filter: saturate();
-  flex-direction: column;
-  flex: 1;
-  justify-content: flex-start;
-  max-width: 480px;
-  text-decoration: none;
-  transition: all .2s;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 4px #0000;
-}
-* {
-  box-sizing: border-box;
-}
-.pg-wrapper {
-  color: var(--read-color);
-}
-.ui-wrapper {
-  color: var(--⚪light-theme--read-color) ;
-  font-size: var(--🅰️-font-family--txt-size-card);
-}
-.body {
-  color: var(--⚫dark-theme--read-color);
-  font-size: var(--🅰️-font-family--txt-size-small);
-}
-body {
-  font-family: var(--🅰️-font-family--bodies);
-  color: var(--⚪light-theme--read-color);
-  font-size: var(--🅰️-font-family--txt-size);
-  font-weight: 400;
-  line-height: 1.6;
-}
-body {
-  color: #333;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-}
-:root {
-  --⚪light-theme--bkg-color: var(--🎨swatch--white-tint);
-  --🅰️-font-family--bodies: Roboto, sans-serif;
-  --⚪light-theme--read-color: var(--🎨swatch--black);
-  --🅰️-font-family--txt-size: 1.1em;
-  --🅰️-font-family--titles: Roboto, sans-serif;
-  --🅰️-font-family--txt-paragraph: 1.1em;
-  --black: var(--🎨swatch--black);
-  --theme-color: var(--🎨swatch--ultramarine);
-  --📐units--padding-section: 0px;
-  --📐units--padding-base: .2em;
-  --📐units--padding-large: .4em;
-  --📐units--padding-larger: .8em;
-  --buttons-links--button-color-txt: var(--⚪light-theme--button-color-txt);
-  --lighter-grey: var(--🎨swatch--grey-lighter);
-  --dark-grey: var(--🎨swatch--grey-dark);
-  --buttons-links--button-color-alt: var(--accent-color);
-  --buttons-links--button-color-alt-txt: var(--⚪light-theme--button-color-alt-txt);
-  --off-white: var(--🎨swatch--white-tint);
-  --🎨swatch--grey-lighter: #ececec;
-  --🎨swatch--grey-dark: #4d4d4d;
-  --base-color: var(--🎨swatch--black);
-  --bkg-color: var(--⚪light-theme--bkg-color);
-  --🎨swatch--grey-light: #b3b3b3;
-  --mid-grey: var(--🎨swatch--grey-mid);
-  --🅰️-font-family--icon-font: "Material Symbols Sharp", sans-serif;
-  --🅰️-font-family--txt-size-bigger: 1.6em;
-  --theme-light: var(--🎨swatch--ultramarine-lighter);
-  --light-grey: var(--🎨swatch--grey-light);
-  --🅰️-font-family--txt-size-small: .9em;
-  --📐units--radius-small: 6px;
-  --theme-off-white: var(--🎨swatch--ultramarine-offwhite);
-  --pure-white: var(--🎨swatch--white-pure);
-  --theme-intense: var(--🎨swatch--ultramarine-dark);
-  --📐units--radius-general: 12px;
-  --⚪light-theme--warning-color: var(--🎨swatch--red);
-  --read-color: var(--⚪light-theme--read-color);
-  --accent-color: var(--theme-off-white);
-  --🅰️-font-family--txt-size-big: 1.4em;
-  --⚪light-theme--button-color: var(--🎨swatch--red);
-  --⚫dark-theme--read-color: var(--🎨swatch--white-tint);
-  --success-color: var(--⚪light-theme--success-color);
-  --warning-color: var(--⚪light-theme--warning-color);
-  --📐units--radius-general-inner: 8px;
-  --theme-soft: var(--🎨swatch--ultramarine-light);
-  --dark-gray\<deleted\|variable-8b5806af\>: var(--🎨swatch--grey-dark);
-  --🎨swatch--azure-darker: #0b314d;
-  --🎨swatch--white-tint: #fafafa;
-  --📐units--radius-minimus: 3px;
-  --🅰️-font-family--long-texts: "Roboto Serif", sans-serif;
-  --🅰️-font-family--article-texts: "Roboto Serif", sans-serif;
-  --⚫dark-theme--bkg-color: var(--🎨swatch--black);
-  --buttons-links--link-txt-color: var(--⚪light-theme--link-txt-color);
-  --buttons-links--clicked-link-txt-color: var(--⚪light-theme--clicked-link-txt-color);
-  --📐units--radius-big: 24px;
-  --🎨swatch--azure-dark: #216ea6;
-  --📐units--grid-flex-spacer: 20px;
-  --📐units--padding-tiny: 2px;
-  --📐units--accordion-tab-left-width: 25rem;
-  --🎨swatch--azure-white: #e1f3ff;
-  --🎨swatch--azure: #338ccc;
-  --🅰️-font-family--txt-size-card: 1em;
-  --🎨swatch--green: #67e671;
-  --🎨swatch--red: #e56156;
-  --⚫dark-theme--warning-color: var(--🎨swatch--red-light);
-  --🎨swatch--red-lighter: #ffd8d4;
-  --🎨swatch--red-darker: #4d110b;
-  --🎨swatch--red-light: #e67167;
-  --🎨swatch--azure-ligher: #9dcff2;
-  --🎨swatch--green-light: #c6f0c9;
-  --🎨swatch--green-darker: #0b4d11;
-  --🎨swatch--purple-lighter: #ddcff1;
-  --🎨swatch--purple-dark: #5821a6;
-  --🎨swatch--orange-light: #f2c19d;
-  --🎨swatch--orange-darker: #4d2f1a;
-  --🎨swatch--teal-lighter: #ccf5f8;
-  --🎨swatch--teal-darker: #0b474d;
-  --🎨swatch--magenta-lighter: #f7d7e9;
-  --🎨swatch--magenta-darker: #470f30;
-  --shadow-basic: var(--⚪light-theme--shadow-basic);
-  --shadow-hover: var(--⚪light-theme--shadow-hover);
-  --txt-1em: 1em;
-  --buttons-links--button-color: var(--theme-color);
-  --⚪light-theme--theme-color: var(--🎨swatch--azure);
-  --⚪light-theme--accent-color: var(--🎨swatch--teal);
-  --⚪light-theme--success-color: var(--🎨swatch--green-dark);
-  --⚪light-theme--button-color-txt: var(--🎨swatch--white-tint);
-  --⚪light-theme--button-color-alt: var(--🎨swatch--lime-dark);
-  --⚪light-theme--button-color-alt-txt: var(--🎨swatch--black);
-  --⚪light-theme--link-txt-color: var(--🎨swatch--azure);
-  --⚪light-theme--clicked-link-txt-color: var(--🎨swatch--purple-dark);
-  --⚪light-theme--shadow-basic: var(--🎨swatch--azure-light);
-  --⚪light-theme--shadow-hover: var(--🎨swatch--azure);
-  --⚫dark-theme--theme-color: var(--🎨swatch--teal);
-  --⚫dark-theme--accent-color: var(--🎨swatch--azure-ligher);
-  --⚫dark-theme--success-color: var(--🎨swatch--green-lighter);
-  --⚫dark-theme--button-color: var(--🎨swatch--lime);
-  --⚫dark-theme--button-color-txt: var(--🎨swatch--black);
-  --⚫dark-theme--button-color-alt: var(--🎨swatch--red-lighter);
-  --⚫dark-theme--button-color-alt-txt: var(--🎨swatch--black);
-  --⚫dark-theme--link-txt-color: var(--🎨swatch--azure-ligher);
-  --⚫dark-theme--clicked-link-txt-color: var(--🎨swatch--purple-light);
-  --⚫dark-theme--shadow-glow: var(--🎨swatch--azure-ligher);
-  --⚫dark-theme--shadow-glow-hover: var(--🎨swatch--azure-light);
-  --🎨swatch--grey-mid: grey;
-  --🎨swatch--black: #141414;
-  --🎨swatch--white-pure: white;
-  --🎨swatch--azure-light: #67b1e6;
-  --🎨swatch--red-dark: #cc3f33;
-  --🎨swatch--green-lighter: #9df2a4;
-  --🎨swatch--green-dark: #33cc3f;
-  --🎨swatch--yellow: #e6c667;
-  --🎨swatch--yellow-lighter: #f8e9bc;
-  --🎨swatch--yellow-light: #f2dd9d;
-  --🎨swatch--yellow-dark: #cca533;
-  --🎨swatch--yellow-darker: #44391b;
-  --🎨swatch--purple: #9c67e6;
-  --🎨swatch--purple-light: #c19df2;
-  --🎨swatch--purple-darker: #270b4d;
-  --🎨swatch--orange: #e69c67;
-  --🎨swatch--orange-lighter: white;
-  --🎨swatch--orange-dark: #cc7333;
-  --🎨swatch--teal: #67dbe6;
-  --🎨swatch--teal-light: #9eedf3;
-  --🎨swatch--teal-dark: #33bfcc;
-  --🎨swatch--magenta: #e667b1;
-  --🎨swatch--magenta-light: #f29dcf;
-  --🎨swatch--magenta-dark: #cc338c;
-  --🎨swatch--lime: #dbe667;
-  --🎨swatch--lime-lighter: #f0f3c8;
-  --🎨swatch--lime-light: #ebf29d;
-  --🎨swatch--lime-dark: #bfcc33;
-  --🎨swatch--lime-darker: #494d26;
-  --🎨swatch--ultramarine-offwhite: #e0def6;
-  --🎨swatch--ultramarine-lighter: #a49df2;
-  --🎨swatch--ultramarine-light: #7167e6;
-  --🎨swatch--ultramarine: #3f33cc;
-  --🎨swatch--ultramarine-dark: #180e7b;
-  --🎨swatch--ultramarine-darker: #0b0b2d;
-  --📐units--padding-small: .1em;
-  --🅰️-font-family--buttons: Roboto, sans-serif;
-  --🅰️-font-family--especials: Roboto, sans-serif;
-  --🅰️-font-family--title: 0px;
-  --🅰️-font-family--title-big: 0px;
-  --🅰️-font-family--heading-h1: 0px;
-  --🅰️-font-family--heading-h2: 0px;
-  --🅰️-font-family--heading-h3: 0px;
-  --🅰️-font-family--heading-h4: 0px;
-  --🅰️-font-family--heading-h5: 0px;
-  --🅰️-font-family--heading-h6: 0px;
-}
-html {
-  -webkit-text-size-adjust: 100%;
-  font-family: sans-serif;
-}
-
-
-.row.equal-height {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 /* ==========================================================================
    URBIS / CKAN — tema único, compacto e responsivo
    Compatível com CKAN 2.10/2.11 + Bootstrap 5
@@ -890,7 +190,7 @@ header.masthead {
 }
 
 header.masthead .navbar {
-  min-height: 74px;
+  min-height: 54px;
   padding: 0;
 }
 
@@ -902,7 +202,7 @@ header.masthead .logo {
 header.masthead .logo img {
   display: block;
   width: auto;
-  max-height: 72px;
+  max-height: 52px;
 }
 
 header.masthead .navbar-nav {
@@ -1948,20 +1248,8 @@ header.masthead .site-search .btn {
   line-height: 1.2;
 }
 
-/* O CKAN core posiciona o .format-label de forma absoluta no canto do
-   .resource-item (top/left 10px), com tamanho fixo de 60x65, sprite de ícones,
-   text-indent negativo e margens negativas, contando com o padding-left de 60px
-   do item. Como aqui o .resource-item usa grid sem esse padding, é preciso
-   desfazer esse posicionamento para o selo voltar a fluir junto do nome. */
 .label[data-format],
-.format-label,
-.resource-item .format-label {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  transform: none;
-  text-indent: 0;
+.format-label {
   background: var(--urbis-primary-soft);
   color: var(--urbis-primary);
 }
@@ -2205,8 +1493,66 @@ input:focus {
 }
 
 /* ==========================================================================
-   9. SELECT2 (dropdown global; o rodapé fica na seção própria)
+   9. RODAPÉ E SELECT2
    ========================================================================== */
+
+.site-footer {
+  margin-top: 18px;
+  padding: 24px 0 22px;
+  background: var(--urbis-primary);
+  border-top: 3px solid var(--urbis-secondary);
+  color: #fff;
+}
+
+.site-footer a {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer .footer-links ul {
+  margin: 0 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-links li {
+  margin: 0 0 4px;
+}
+
+.site-footer .attribution p,
+.site-footer .lang-select label {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+}
+
+.site-footer .lang-select {
+  margin-top: 8px;
+}
+
+.site-footer .select2-container.lang-container {
+  width: 100% !important;
+  max-width: 280px;
+}
+
+.site-footer .select2-container .select2-choice {
+  height: 30px;
+  padding: 4px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--urbis-radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: none;
+  line-height: 20px;
+}
+
+.site-footer .select2-container .select2-choice:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
 
 .select2-drop {
   border: 1px solid var(--urbis-border);
@@ -2256,11 +1602,11 @@ input:focus {
   }
 
   header.masthead .navbar {
-    min-height: 58px;
+    min-height: 44px;
   }
 
   header.masthead .logo img {
-    max-height: 56px;
+    max-height: 44px;
   }
 
   .main #content > .row.wrapper {
@@ -2335,6 +1681,10 @@ input:focus {
   .table {
     display: block;
     overflow-x: auto;
+  }
+
+  .site-footer .row > [class*="col-"] {
+    margin-bottom: 14px;
   }
 }
 
@@ -2591,31 +1941,15 @@ header.masthead {
   content: "";
 }
 
-/* ==========================================================================
-   RODAPÉ — bloco único e padronizado.
-   Marca, navegação, créditos e idioma seguem a mesma grade e tipografia.
-   Não criar regras de .site-footer fora desta seção.
-   ========================================================================== */
-
+/* Footer com hierarquia institucional e marca evidente. */
 .site-footer {
   margin-top: 18px !important;
-  padding: 28px 0 26px !important;
+  padding: 28px 0 24px !important;
   border-top: 3px solid var(--urbis-secondary) !important;
   background: var(--urbis-primary) !important;
   color: #fff !important;
 }
 
-.site-footer a {
-  color: rgba(255, 255, 255, 0.92);
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Marca */
 .site-footer .footer-wordmark {
   display: block;
   margin: 0 0 22px;
@@ -2635,32 +1969,22 @@ header.masthead {
   text-decoration: none;
 }
 
-/* Grade: navegação | créditos | idioma */
-.site-footer .footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(210px, 280px);
-  gap: 24px 40px;
-  align-items: start;
+.site-footer .row {
+  row-gap: 14px;
+  margin-right: -8px;
+  margin-left: -8px;
 }
 
-.site-footer .footer-heading {
-  margin: 0 0 12px;
-  padding: 0 0 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  line-height: 1.2;
-  text-transform: uppercase;
+.site-footer .row > [class*="col-"] {
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
-/* Navegação */
 .site-footer .footer-links ul {
   display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 0 !important;
+  flex-wrap: wrap;
+  gap: 5px 16px;
+  margin: 0 0 8px !important;
   padding: 0 !important;
   list-style: none;
 }
@@ -2669,134 +1993,31 @@ header.masthead {
   margin: 0 !important;
 }
 
-.site-footer .footer-links a {
-  font-size: 0.84rem;
+.site-footer .footer-links a,
+.site-footer .attribution a {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 0.8rem;
   font-weight: 500;
-  line-height: 1.35;
 }
 
-/* Créditos: mesma lista e mesma tipografia da navegação. */
-.site-footer .footer-credits {
-  margin-top: 7px;
+.site-footer .footer-links a:hover,
+.site-footer .attribution a:hover {
+  color: #fff !important;
+  text-decoration: underline;
 }
 
-.site-footer .footer-credits ul {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.site-footer .attribution {
+  text-align: right;
 }
 
-.site-footer .footer-credit {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
+.site-footer .attribution p {
+  margin: 0 0 6px;
 }
 
-.site-footer .footer-credit-label,
-.site-footer .footer-credit a {
-  font-size: 0.84rem;
-  font-weight: 500;
-  line-height: 1.35;
-}
-
-.site-footer .footer-credit-label {
-  color: rgba(255, 255, 255, 0.92);
-}
-
-/* O nome e a logo formam um único alvo clicável; o alt da imagem fica
-   vazio para o leitor de tela não anunciar a marca duas vezes. */
-.site-footer .footer-credit a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.site-footer .footer-credit img {
-  display: block;
-  width: auto;
-  height: 20px;
-  margin: 0;
-}
-
-/* Idioma */
-.site-footer .footer-lang .lang-select {
-  display: block;
-  margin: 0;
-}
-
-/* O rótulo do snippet do CKAN repetiria o título da coluna. */
-.site-footer .footer-lang .lang-select label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/* O seletor envia sozinho na troca; o botão "Ir" é fallback sem JS. */
-.site-footer .lang-select .btn,
-.site-footer .lang-select button[type="submit"] {
-  display: none !important;
-}
-
-.site-footer .footer-lang select,
-.site-footer .select2-container.lang-container {
-  width: 100% !important;
-  max-width: none;
-}
-
-.site-footer .footer-lang select {
-  height: 36px;
-  padding: 6px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--urbis-radius-sm);
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  font-size: 0.82rem;
-}
-
-.site-footer .footer-lang select option {
-  background: #fff;
-  color: var(--urbis-foreground);
-}
-
-.site-footer .select2-container .select2-choice {
-  display: flex;
-  align-items: center;
-  height: 36px;
-  padding: 6px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--urbis-radius-sm) !important;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  font-size: 0.82rem;
-  line-height: 22px;
-  box-shadow: none;
-}
-
-.site-footer .select2-container .select2-choice:hover,
-.site-footer .select2-container.select2-container-active .select2-choice {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.site-footer .select2-container .select2-choice .select2-arrow {
-  border-left-color: rgba(255, 255, 255, 0.3);
-  background: transparent;
-}
-
-@media (max-width: 991.98px) {
-  .site-footer .footer-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
-    gap: 20px 24px;
-  }
+.site-footer .ckan-footer-logo {
+  display: inline-block;
+  min-height: 20px;
+  min-width: 48px;
 }
 
 /* Botões consistentes no CKAN inteiro, sem efeito de sombra duplicada. */
@@ -2999,6 +2220,11 @@ header.masthead .site-search button.btn > .fa,
   min-height: 40px;
 }
 
+.site-footer .select2-container .select2-choice {
+  min-height: 30px;
+  border-radius: var(--urbis-radius-sm) !important;
+}
+
 @media (max-width: 767.98px) {
   .homepage .main.hero > .container > .row {
     display: block !important;
@@ -3015,12 +2241,11 @@ header.masthead .site-search button.btn > .fa,
     padding-left: 0 !important;
   }
 
-  .site-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .site-footer .attribution {
+    text-align: left;
   }
 
-  .site-footer .footer-wordmark {
+  .site-footer .container::before {
     margin-bottom: 16px;
     font-size: 3.5rem;
   }

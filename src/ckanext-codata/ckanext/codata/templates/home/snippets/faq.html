@@ -36,9 +36,19 @@
       margin-bottom: 0 !important; /* Remove margem extra no fim */
   }
   
-  /* 4. CONTEÚDO INTERNO: Remove largura fixa do JS */
+  /* 4. CONTEÚDO INTERNO: Remove largura fixa do JS.
+        O colapso e o scroll da resposta aberta ficam em custom.css
+        (.accordion-container.faq.open > .accordion-content). */
   .accordion-content {
       width: auto !important;
+  }
+
+  .accordion-header {
+      cursor: pointer;
+  }
+
+  .accordion-arrow {
+      transition: transform 0.3s ease;
   }
 
   /* 5. Estilização da Barra de Scroll (Webkit) */
@@ -69,13 +79,14 @@
         </div>
         <div class="accordion-content" style="height: 0px;">
           <div class="w-richtext">
-            <p>O Portal URBIS centraliza uma vasta gama de dados públicos focados no desenvolvimento e gestão urbana. O nosso repositório inclui informações detalhadas sobre:</p>
+            <p>Dadas suas finalidades específicas de melhorar a competitividade empresarial, com foco nas pequenas empresas, por meio sobretudo da redução de assimetrias de acesso à informação e da sua compreensão de maneira fácil, clara e padronizada, o Urbis possui uma curadoria de dados cujo elemento comum é a utilidade ao desenvolvimento de atividades econômicas urbanas (parcelar, construir, usar). Nele é possível encontrar, por exemplo, dados nas temáticas:</p>
             <ul role="list">
-              <li><strong>Planeamento Urbano:</strong> Zoneamento, uso do solo e infraestruturas.</li>
-              <li><strong>Mobilidade:</strong> Transportes públicos, tráfego e logística.</li>
-              <li><strong>Meio Ambiente:</strong> Qualidade do ar, áreas verdes e saneamento.</li>
+              <li>Civil (ex.: faixas de domínio, faixas não edificáveis, servidões administrativas)</li>
+              <li>Urbanística (ex.: macrozoneamento, zoneamento, planos específicos, leis especiais)</li>
+              <li>Ambiental (ex.: Áreas de Preservação Permanente, Unidades de Conservação, Áreas de Preservação e Recuperação dos Mananciais)</li>
+              <li>Cultural (ex.: tombamentos, áreas envoltórias, tombamentos ambientais e paisagísticos)</li>
             </ul>
-            <p>Os dados são disponibilizados em formatos abertos e legíveis por máquina (como <strong>CSV, JSON, GeoJSON</strong>), garantindo que podem ser facilmente reutilizados para análises, estudos académicos ou desenvolvimento de aplicações.</p>
+            <p>Os dados são disponibilizados em formatos abertos de mercado, como o GeoJSON, permitindo seu uso em análises por acadêmicos, gestores e público em geral, assim como para o desenvolvimento de aplicações.</p>
           </div>
         </div>
       </div>
@@ -87,29 +98,25 @@
         </div>
         <div class="accordion-content" style="height: 0px;">
           <div class="w-richtext">
-            <p>Para garantir a integridade e a frescura da informação, utilizamos uma <strong>arquitetura de medalhão</strong>. Os dados passam por camadas de validação e transformação — desde a ingestão bruta até ao tratamento final.</p>
-            <p>Todo este fluxo de coleta, transformação e publicação é orquestrado pelo <strong>Dagster</strong>, o que nos permite manter o catálogo sempre atualizado de forma eficiente.</p>
-            <p> O código de orquestração do projeto fica disponível repositório:</p>
-            <p>
-              <a href="https://github.com/OpenUrbis/urbis-datalake" target="_blank">
-                <strong>Acesse ao Repositório Urbis DataLake no GitHub</strong>
-              </a>
-            </p>
+            <p>Para garantir a atualidade e a integridade do dado, utilizamos a arquitetura de medalhões. Os dados passam por camadas de validação e transformação &mdash; desde a ingestão bruta até ao tratamento final.</p>
+            <p>Todo este fluxo de coleta, transformação e publicação é orquestrado pelo Dagster, o que nos permite manter o catálogo sempre atualizado de forma eficiente.</p>
+            <p>O código de orquestração do projeto fica disponível no repositório: <a href="https://github.com/OpenUrbis/urbis-datalake" target="_blank" rel="noopener">Urbis DataLake no GitHub</a>.</p>
           </div>
         </div>
       </div>
 
       <div class="accordion-container faq">
         <div class="accordion-header">
-          <h5 class="accordion-h faq">Quais são as formas de consulta dos dados?</h5>
+          <h5 class="accordion-h faq">Quais são as formas de consumo dos dados?</h5>
           <div class="txt-ico accordion-arrow">keyboard_arrow_up</div>
         </div>
         <div class="accordion-content" style="height: 0px;">
           <div class="w-richtext">
-            <p>O URBIS foi desenhado para atender a diferentes perfis de utilizadores. Existem duas formas de acesso aos dados:</p>
+            <p>O Urbis foi desenhado para atender a diferentes perfis de utilizadores. Existem três formas de acesso aos dados:</p>
             <ul role="list">
-              <li><strong>Interface Web:</strong> Navegando visualmente pelo portal, usar a barra de pesquisa, filtrar por etiquetas e pré-visualizar tabelas ou mapas diretamente no navegador antes de fazer o download.</li>
-              <li><strong>API REST:</strong> Para programadores e cientistas de dados, oferecemos acesso direto e automatizado a todos os datasets através da API do CKAN, permitindo a integração dos nossos dados em sistemas externos em tempo real.</li>
+              <li><strong>Interface Web:</strong> tanto pelo Mapa.Urbis quanto pelo DadosAbertos.Urbis, é possível ao usuário comum navegar pesquisando, filtrando e visualizando dados do nosso data lake. No DadosAbertos.Urbis, em específico, é possível filtrar por grupos e etiquetas, pré-visualizar tabelas ou mapas diretamente no navegador, e fazer o download em formatos abertos, como o GeoJSON</li>
+              <li><strong>Geoserver:</strong> através de autenticação na API Urbis, desenvolvedores e analistas de dados geográficos podem acessar os serviços de Web Map Service (WMS) e Web Feature Service (WFS) &mdash; <a href="https://docs.urbis.prefeitura.sp.gov.br/docs/general/mapa/integracao-api/" target="_blank" rel="noopener">mais informações em Docs.Urbis, Consumo Externo de Mapas (WMS / WFS)</a></li>
+              <li><strong>API CKAN:</strong> através da API do CKAN, desenvolvedores e cientistas de dados podem acessar de forma automatizada e em tempo real os dados e metadados do Urbis &mdash; <a href="https://docs.ckan.org/en/" target="_blank" rel="noopener">mais informações em Docs.CKAN, API guide</a></li>
             </ul>
           </div>
         </div>
@@ -122,12 +129,12 @@
         </div>
         <div class="accordion-content" style="height: 0px;">
           <div class="w-richtext">
-            <p>Com ela, é possível:</p>
+            <p>O portal URBIS expõe publicamente a API do CKAN, que permite consultar o catálogo de forma programática. Com ela, é possível:</p>
             <ul role="list">
-              <li>Consultar todos os metadados do portal;</li>
-              <li>Baixar todos os arquivos do portal.</li>
+              <li>Consultar todos os metadados do portal</li>
+              <li>Baixar todos os arquivos do portal</li>
             </ul>
-            <p>Para aprender a construir as tuas requisições e ver exemplos de código, consulta a documentação oficial:</p>
+            <p>Para aprender a construir as suas requisições e ver exemplos de código, consulte a documentação oficial:</p>
             <p>
               <a href="https://docs.ckan.org/en/2.9/api/" target="_blank">
                 <strong>Leia a Documentação da API do CKAN 2.10.11</strong>
@@ -149,13 +156,16 @@
   $(document).ready(function(){
     $('.accordion-header').click(function(){
       var container = $(this).closest('.accordion-container');
-      container.toggleClass('open');
-      var arrow = $(this).find('.accordion-arrow');
-      if (container.hasClass('open')) {
-        arrow.css({transform: 'rotate(180deg)'});
-      } else {
-        arrow.css({transform: 'rotate(0deg)'});
-      }
+      var willOpen = !container.hasClass('open');
+
+      // Fecha qualquer outra pergunta aberta: só uma fica expandida por vez
+      $('.accordion-container.faq.open').not(container)
+        .removeClass('open')
+        .find('.accordion-arrow').css({transform: 'rotate(0deg)'});
+
+      container.toggleClass('open', willOpen);
+      $(this).find('.accordion-arrow')
+        .css({transform: willOpen ? 'rotate(180deg)' : 'rotate(0deg)'});
     });
   });
 </script>
